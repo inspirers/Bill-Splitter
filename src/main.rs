@@ -33,8 +33,8 @@ fn exit() {
     println!("Press enter to exit.");
     let mut input_line = String::new();
     io::stdin() // the rough equivalent of `std::cin`
-    .read_line(&mut input_line) // actually read the line
-    .expect("Failed to read line"); // which can fail, however
+        .read_line(&mut input_line) // actually read the line
+        .expect("Failed to read line"); // which can fail, however
 }
 
 fn main() {
