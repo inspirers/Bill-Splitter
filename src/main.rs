@@ -1,5 +1,7 @@
 use std::io;
 use std::io::Write;
+//use std::process;
+extern crate exitcode;
 
 fn input(n: u8) -> f32 {
     print!("Enter amount for person {}: ", n);
@@ -27,8 +29,17 @@ fn calc(x: f32, y: f32) {
     }
 }
 
+fn exit() {
+    println!("Press enter to exit.");
+    let mut input_line = String::new();
+    io::stdin() // the rough equivalent of `std::cin`
+    .read_line(&mut input_line) // actually read the line
+    .expect("Failed to read line"); // which can fail, however
+}
+
 fn main() {
     let x: f32 = input(1);
     let y: f32 = input(2);
     calc(x, y);
+    exit();
 }
