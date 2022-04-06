@@ -25,7 +25,7 @@ fn calc(x: f32, y: f32) {
     } else if y > x {
         println!("Person 1 should pay person 2: {}", ((y - x) / 2.0));
     } else if y == x {
-        println!("No transfer should be made.");
+        println!("No transfer should be made.benji");
     }
 }
 
