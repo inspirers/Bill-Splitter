@@ -1,13 +1,11 @@
 use std::io;
 use std::io::Write;
-//use std::process;
-extern crate exitcode;
 
 fn input(n: u8) -> f32 {
     print!("Enter amount for person {}: ", n);
 
     io::stdout().flush().unwrap();
-    let mut input_line = String::new();
+    let mut input_line = String::new(); //New string used for input
     io::stdin() // the rough equivalent of `std::cin`
         .read_line(&mut input_line) // actually read the line
         .expect("Failed to read line"); // which can fail, however
@@ -29,9 +27,9 @@ fn calc(x: f32, y: f32) {
     }
 }
 
-fn exit() {
+fn exit() { //Let user press enter to continue
     println!("Press enter to exit.");
-    let mut input_line = String::new();
+    let mut input_line = String::new(); //New string used for input
     io::stdin() // the rough equivalent of `std::cin`
         .read_line(&mut input_line) // actually read the line
         .expect("Failed to read line"); // which can fail, however
@@ -39,7 +37,7 @@ fn exit() {
 
 fn main() {
     let x: f32 = input(1);
-    let y: f32 = input(2);
-    calc(x, y);
+    let y: f32 = input(2); //Two people
+    calc(x, y); //Calculate 
     exit();
 }
